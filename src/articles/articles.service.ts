@@ -19,8 +19,8 @@ export class ArticlesService {
     return this.articleRepository.find();
   }
 
-  async findById(id: number): Promise<Article> {
-    const article = await this.articleRepository.findOne(id);
+   async findById(id: number): Promise<Article> {
+    const article = await this.articleRepository.findOne({ where: { id } });
     if (!article) {
       throw new NotFoundException(`Article with ID ${id} not found`);
     }

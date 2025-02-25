@@ -8,17 +8,19 @@ import { ArticlesModule } from './articles/articles.module';
 import { Article } from './articles/article.entity';
 import { CategoriesModule } from './categories/categories.module';
 import { CommentsModule } from './comments/comments.module';
+import { Category } from './categories/category.entity';
+import { Comment } from './comments/comment.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
+      port: 5433,
       username: 'postgres',
       password: '123',
-      database: 'nest_api',
-      entities: [User, Article],
+      database: 'api',
+      entities: [User, Article, Category, Comment],
       synchronize: true,
     }),
     AuthModule,
