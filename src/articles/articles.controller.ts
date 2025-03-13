@@ -34,5 +34,4 @@ export class ArticlesController {
   async delete(@Param('id') id: number): Promise<void> {
     return this.articlesService.delete(id);
   }
-  
 }
